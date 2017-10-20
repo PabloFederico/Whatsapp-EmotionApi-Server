@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>PGF</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+Tu jugador es:
+<div id="jugador"></div>
+</body>
+
+
+
+<script type="text/javascript">
+
+var jugadores = [];
+var jug1 = {'Nombre':'Marcos Diaz','Numero':1};
+var jug2 = {'Nombre':'C. Chimino','Numero':28};
+var jug3 = {'Nombre':'Saul Salcedo','Numero':6};
+var jug4 = {'Nombre':'Martin Nervo','Numero':21};
+var jug5 = {'Nombre':'Lucas Villalba','Numero':19};
+var jug6 = {'Nombre':'A. Calello','Numero':25};
+var jug7 = {'Nombre':'Patricio Toranzo','Numero':18};
+var jug8 = {'Nombre':'Mariano Gonzalez','Numero':15};
+var jug9 = {'Nombre':'Nacho Pusetto','Numero':7};
+var jug10 = {'Nombre':'Wanchope Abila','Numero':9};
+var jug11 = {'Nombre':'F. Coniglio','Numero':24};
+
+jugadores.push(jug1);
+jugadores.push(jug2);
+jugadores.push(jug3);
+jugadores.push(jug4);
+jugadores.push(jug5);
+jugadores.push(jug6);
+jugadores.push(jug7);
+jugadores.push(jug8);
+jugadores.push(jug9);
+jugadores.push(jug10);
+jugadores.push(jug11);
+
+$("document").ready(function(){
+
+var rand = jugadores[Math.floor(Math.random() * jugadores.length)];
+$("#jugador").text(rand.Nombre + " - " + rand.Numero);
+
+});
+
+</script>
+</html>
