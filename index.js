@@ -39,3 +39,40 @@ pg.connect(config.DATABASE_URL, function (err, client, done) {
     });
 
   });
+  
+  
+app.post('/user', function(req, res) {
+  
+  
+	pg.connect(config.DATABASE_URL, function (err, client, done) {
+		if (err)
+		throw err;
+		
+		var name = "Pablo";
+		var surname = "Federico";
+		
+		var user = [name,surname];
+		
+		client.query('INSERT INTO prueba(nombre,apellido) values($1,$2)', user, function (err, result) {
+			if (err) {
+			console.log(err);
+			throw err;
+			}
+		});
+
+	});
+	
+	
+	/*
+	res.setHeader('Content-Type', 'application/json');
+
+    res.send(JSON.stringify({
+            firstName: req.body.firstName || null,
+            lastName: req.body.lastName || null
+    }));
+
+    //debugging output for the terminal
+    console.log('you posted: First Name: ' + req.body.firstName + ', Last Name: ' + req.body.lastName);
+	*/
+
+});
